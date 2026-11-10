@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <permission
+            android:name="dev.pocketprint.permission.PRINT"
+            android:protectionLevel="signature" />
+    <application
+            android:label="Pocket Print Station"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar"
+            android:allowBackup="false">
+        <activity
+                android:name=".MainActivity"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+                android:name=".PrintService"
+                android:exported="true"
+                android:permission="dev.pocketprint.permission.PRINT" />
+    </application>
+</manifest>
